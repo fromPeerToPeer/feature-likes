@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'registrations/new'
-  post 'registrations/create'
+  root 'registrations#new'
+
+  get '/register', to: 'registrations#new'
+  post '/register', to: 'registrations#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

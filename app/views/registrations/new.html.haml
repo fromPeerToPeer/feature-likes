@@ -1,2 +1,8 @@
-%h1 Registrations#new
-%p Find me in app/views/registrations/new.html.haml
+%h1 Register
+= form_for :user, as: :post, url: register_path do |f|
+  Name:
+  = f.text_field :name
+  Email :
+  = f.text_field :email
+
+  = f.submit "Register"
