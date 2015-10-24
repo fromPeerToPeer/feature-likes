@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to somewhere
+      login_as(@user.id)
     else
       render :new
     end

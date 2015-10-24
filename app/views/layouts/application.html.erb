@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if logged_in? %>
+  <%= link_to 'Log out', logout_path %>
+<% else %>
+  <%= link_to 'Log in', login_path %>
+  <%= link_to 'Register', register_path %>
+<% end %>
+
 <%= yield %>
 
 </body>
