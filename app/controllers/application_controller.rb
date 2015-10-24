@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+    @current_user ||= User.find(session[:logged_in_user])
+  end
+
   def logged_in?
     session[:logged_in_user].present?
   end
@@ -18,5 +22,6 @@ class ApplicationController < ActionController::Base
     reset_session
   end
 
+  helper_method :current_user
   helper_method :logged_in?
 end
