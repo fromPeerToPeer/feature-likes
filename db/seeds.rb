@@ -9,6 +9,6 @@ colour_feature   = FeatureRequest.create(title: 'Be not hostile to the colour bl
 
 Vote.create(user: melinda, feature_request: colour_feature)
 Vote.create(user: melinda, feature_request: reader_feature)
-2.times {
+2.times do
   Vote.create(user: drew, feature_request: keyboard_feature)
 end
