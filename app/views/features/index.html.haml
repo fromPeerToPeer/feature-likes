@@ -1,3 +1,5 @@
 %ul
   - @features.each do |feature|
-    %li= feature.title
+    %li
+      = feature.title
+      = feature.vote_count
