@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
   def index
-    @features = FeatureRequest.waiting
+    @features = FeatureRequest.most_requested
   end
 end
