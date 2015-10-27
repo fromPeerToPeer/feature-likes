@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  post 'votes/create'
+  delete 'votes/destroy'
+
   root 'registrations#new'
 
   get '/register', to: 'registrations#new'
