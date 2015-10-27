@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'features#index'
+
   post '/votes/create/:feature_id', to: 'votes#create'
   delete 'votes/destroy'
-
-  root 'registrations#new'
 
   get '/register', to: 'registrations#new'
   post '/register', to: 'registrations#create'
