@@ -7,5 +7,9 @@ class VotesController < ApplicationController
   end
 
   def destroy
+    if vote = current_user.votes.where(feature_request_id: params[:feature_id]).first
+      vote.destroy
+    end
+    redirect_to features_path
   end
 end
