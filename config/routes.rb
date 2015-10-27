@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post 'votes/create'
+  post '/votes/create/:feature_id', to: 'votes#create'
   delete 'votes/destroy'
 
   root 'registrations#new'

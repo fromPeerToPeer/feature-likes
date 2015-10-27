@@ -1,5 +1,7 @@
 %ul
   - @features.each do |feature|
     %li
+      - if logged_in?
+        = button_to "Like", controller: 'votes', action: 'create', feature_id: feature.id
       = feature.title
       = feature.vote_count
