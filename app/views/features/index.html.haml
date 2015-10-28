@@ -6,7 +6,8 @@
   - @features.each do |feature|
     %li
       - if logged_in?
-        = button_to "Like", { controller: 'votes', action: 'create', feature_id: feature.id }
+        - if current_user.can_vote?
+          = button_to "Like", { controller: 'votes', action: 'create', feature_id: feature.id }
         - if current_user.voted_for?(feature)
           = button_to "Unlike", { controller: 'votes', action: 'destroy', feature_id: feature.id }, method: :delete
       = feature.title

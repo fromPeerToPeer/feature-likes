@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def votes_remaining
     VOTES_ALLOWED - votes_used
   end
+
+  def can_vote?
+    votes_remaining > 0
+  end
 end
