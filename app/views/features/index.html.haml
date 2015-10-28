@@ -3,6 +3,7 @@
     %li
       - if logged_in?
         = button_to "Like", { controller: 'votes', action: 'create', feature_id: feature.id }
-        = button_to "Unlike", { controller: 'votes', action: 'destroy', feature_id: feature.id }, method: :delete
+        - if current_user.voted_for?(feature)
+          = button_to "Unlike", { controller: 'votes', action: 'destroy', feature_id: feature.id }, method: :delete
       = feature.title
       = feature.vote_count
