@@ -13,4 +13,13 @@
     - else
       = link_to 'Log in', login_path
       = link_to 'Register', register_path
+    %ul.nav
+      %li
+        = link_to_unless_current 'Home', root_path
+      %li
+        = link_to_unless_current 'Features', '/features'
+      %li
+        = link_to_unless_current 'About', '/about'
+      %li
+        = link_to_unless_current 'Contact', '/contact'
     = yield
