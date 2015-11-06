@@ -13,3 +13,5 @@
           disabled: current_user.has_not_voted_for?(feature)
       = feature.title
       = "(#{feature.vote_count})"
+      - if current_user.has_voted_for?(feature)
+        = "You have given this #{current_user.vote_count_for(feature)} likes"

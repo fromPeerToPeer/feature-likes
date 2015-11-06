@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 
   has_many :votes
 
+  def vote_count_for(feature)
+    votes.select { |v| v.feature_request == feature }.count
+  end
+
   def has_voted_for?(feature)
     votes.any? { |v| v.feature_request == feature }
   end
