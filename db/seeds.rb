@@ -5,7 +5,7 @@ drew    = User.create(name: 'Drew', email: 'drew@peertopeer.io')
 keyboard_feature = FeatureRequest.create(title: 'Allow for keyboard-only use')
 mouse_feature    = FeatureRequest.create(title: 'Allow for mouse-only use')
 reader_feature   = FeatureRequest.create(title: 'Allow for screenreader use')
-colour_feature   = FeatureRequest.create(title: 'Be not hostile to the colour blind')
+colour_feature   = FeatureRequest.create(title: 'Allow for good colour contrast')
 
 Vote.create(user: melinda, feature_request: colour_feature)
 Vote.create(user: melinda, feature_request: reader_feature)
