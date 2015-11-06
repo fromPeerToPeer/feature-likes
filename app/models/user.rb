@@ -3,8 +3,12 @@ class User < ActiveRecord::Base
 
   has_many :votes
 
-  def voted_for?(feature)
+  def has_voted_for?(feature)
     votes.any? { |v| v.feature_request == feature }
+  end
+
+  def has_not_voted_for?(feature)
+    !has_voted_for?(feature)
   end
 
   def votes_used
@@ -17,5 +21,9 @@ class User < ActiveRecord::Base
 
   def can_vote?
     votes_remaining > 0
+  end
+
+  def cannot_vote?
+    !can_vote?
   end
 end
