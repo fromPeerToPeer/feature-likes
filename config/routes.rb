@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'features#index'
 
-  post '/votes/create/:feature_id', to: 'votes#create'
-  delete 'votes/destroy/:feature_id', to: 'votes#destroy'
+  post '/votes/create/:feature_id', to: 'votes#create', as: :like
+  delete 'votes/destroy/:feature_id', to: 'votes#destroy', as: :unlike
 
   get '/register', to: 'registrations#new'
   post '/register', to: 'registrations#create'
