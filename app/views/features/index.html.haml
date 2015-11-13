@@ -2,16 +2,4 @@
   %p
     = "You have #{current_user.votes_remaining} likes to give"
 
-%ul
-  - @features.each do |feature|
-    %li
-      - if logged_in?
-        = button_to "Like", like_path(feature),
-          disabled: current_user.cannot_vote?
-        = button_to "Unlike", unlike_path(feature),
-          method: :delete,
-          disabled: current_user.has_not_voted_for?(feature)
-      = feature.title
-      = "(#{feature.vote_count})"
-      - if logged_in? && current_user.has_voted_for?(feature)
-        = "You have given this #{current_user.votes_for(feature).count} likes"
+= render "features"
