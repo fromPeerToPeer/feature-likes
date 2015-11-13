@@ -4,7 +4,7 @@ class VotesController < ApplicationController
       current_user.votes.create(feature_request: feature)
       @features = FeatureRequest.most_requested
       respond_to do |format|
-        format.js { render partial: 'features/features', status: :created }
+        format.js
         format.html { redirect_to features_path }
       end
     end
@@ -16,7 +16,7 @@ class VotesController < ApplicationController
     end
     @features = FeatureRequest.most_requested
     respond_to do |format|
-      format.js { render partial: 'features/features' }
+      format.js
       format.html { redirect_to features_path }
     end
   end
